@@ -35,11 +35,6 @@ All the note books are availabel [here]("https://github.com/vishalrk1/SkimLit/tr
 
 <img src="images/bert model.png" width=100% height=100%>
 
-### **Final Outputs** 
-
-<img src="images/Streamlit.png" width=100% height=100%>
-
-
 ## Packages Used
 - Tensorflow
 - tensorflow_text
