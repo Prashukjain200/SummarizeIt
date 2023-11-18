@@ -1,61 +1,95 @@
-# SummarizeIt: Revolutionizing Research with AI
+# SummarizeIt: NLP-Driven Insights into Medical Abstracts
 
-Dive into the heart of medical literature with ease. Our NLP model classifies abstract sentences into distinct roles, transforming the way researchers access and understand scientific papers.
+Welcome to SummarizeIt, the NLP-powered tool that is reshaping how medical researchers review literature. By classifying sentences into categories such as objectives, methods, results, and conclusions, SummarizeIt enables quick skimming and deeper dives into research papers, enhancing productivity and understanding.
 
-## Project Overview
+## Introduction
 
-At the core of SummarizeIt is a sophisticated deep learning model, inspired by the groundbreaking 2017 paper ['PubMed 200k RCT'](https://arxiv.org/abs/1710.06071). This model is not just an imitation but an evolution, tailored to meet the dynamic needs of modern medical research.
+Drawing inspiration from the pivotal 2017 research presented in 'PubMed 200k RCT', SummarizeIt leverages deep learning to parse and categorize complex medical text. The result? A nuanced tool that empowers researchers to efficiently navigate and extract value from extensive medical literature.
 
-## Dataset Utilized
+## Dataset Overview
 
-The project utilizes the [PubMed 200k RCT dataset](https://github.com/Franck-Dernoncourt/pubmed-rct), a rich source of medical abstracts. It's important to note:
+Our models are trained using the [PubMed 200k RCT dataset](https://github.com/Franck-Dernoncourt/pubmed-rct), a robust collection of randomized controlled trials. Key features include:
 
-- **PubMed 20k is a subset of PubMed 200k.** Any abstract present in PubMed 20k is also in PubMed 200k.
-- **Variants of the dataset:** 'PubMed_200k_RCT_numbers_replaced_with_at_sign' replaces all numbers with '@'.
+- **PubMed 20k RCT**: A focused subset for targeted analysis.
+- **Number Replacement**: In some variants, numbers are replaced with '@' to ensure the model isn't biased by specific numerical data.
 
-### Count Plot Visualization
+### Visualizing the Data
 
-![Count Plot](https://user-images.githubusercontent.com/59719046/138639626-48336732-ca8f-4bfe-8063-0e1f7a7c6ae6.png)
+Understanding the makeup of our dataset is crucial. The count plot below illustrates the distribution of sentence types, which informs our model training:
 
-*This count plot visually represents the distribution of sentence roles in our dataset, offering a glimpse into the diverse nature of medical abstracts.*
+![Dataset Sentence Role Distribution](images/count%20plot.png)
 
-## Models and Their Evolution
+*Distribution of sentence roles within the dataset, highlighting the variety of data our models are trained on.*
 
-Throughout the project, several models were experimented with, each contributing to the understanding and effectiveness of our final model:
+## Model Development Journey
 
-- Naive Bayes Model – 72% Accuracy
-- Conv1D Model – 78% Accuracy
-- Universal Sentence Embedding – 75% Accuracy
-- Conv1D with Character Level Embedding – 73% Accuracy
-- Token and Character Level Embedding – 76% Accuracy
-- Token, Character, and Position Level Embedding – 81% Accuracy
-- BERT-Embedded Model – 88% Accuracy (As described in this [paper](https://arxiv.org/pdf/1612.05251.pdf))
+Embarking on a journey through machine learning, we explored various architectures, each with its own strengths:
 
-## Final Results
+- Naive Bayes Model – Our starting point, achieving 72% accuracy.
+- Conv1D Model – Enhanced pattern recognition brought us to 78% accuracy.
+- Universal Sentence Encoder – Leveraged pre-trained models for a solid 75% accuracy.
+- Character-Level Conv1D – Diving deeper into textual nuances, reaching 73% accuracy.
+- Hybrid Token-Character Models – Combining multiple data representations to improve to 76% accuracy.
+- Position-Enhanced Models – Incorporating sentence position for a significant leap to 81% accuracy.
+- BERT-Embedded Model – The pinnacle of our efforts, integrating state-of-the-art BERT embeddings to achieve a remarkable 88% accuracy.
 
-### Results of All Models
+### Comparative Model Performance
 
-![Modeling Results](images/modeling results.png)
+This graph presents a comparative view of our models, showcasing the iterative improvement in performance metrics:
 
-### Best Performing Model
+![Model Performance Comparison](images/modeling%20results.png)
 
-![BERT Model](images/bert model.png)
+*Comparative analysis of model performance, guiding our focus towards the most effective architectures.*
+
+### F1 Score Breakdown
+
+F1 scores provide a balance between precision and recall. Here's how our models stack up:
+
+![F1 Score Comparison](images/f1%20score%20images.png)
+
+*F1 scores of different models, demonstrating the balanced performance of our best model.*
+
+## Our Best Model
+
+In the end, the BERT-Embedded Model emerged as our champion, setting a new standard for accuracy in sentence classification.
+
+### Architecture of Our Champion Model
+
+Take a look at the structure of our most effective model:
+
+![Best Performing Model Architecture](images/final%20model.png)
+
+*A detailed look at the BERT-Embedded Model that outperformed the rest.*
+
+### Exploring Other Architectures
+
+We didn't stop at the first success; we explored further:
+
+![Additional Model Architectures](images/final%20model%201.png)
+
+*Exploratory models that contributed to our understanding and final design.*
+
+## SummarizeIt in Action
+
+Here's a glimpse of what SummarizeIt can do:
+
+![Application Output Example](images/app%20output.png)
+
+*A snapshot of the SummarizeIt tool categorizing sentences from a medical abstract.*
 
 ## Technical Stack
 
-The project employs a variety of tools and libraries:
+Building SummarizeIt required a diverse set of tools, including:
 
-- **Tensorflow:** For building and training deep learning models.
-- **tensorflow_text & tensorflow_hub:** For advanced text processing and embedding.
-- **sklearn:** For data preprocessing and model evaluation.
-- **Matplotlib:** For creating informative visualizations.
-- **numpy & pandas:** For data manipulation and analysis.
-- **spaCy:** For advanced Natural Language Processing.
+- **TensorFlow**: The backbone of our deep learning models.
+- **TensorFlow Text and TensorFlow Hub**: For processing and embedding sophisticated text data.
+- **Scikit-Learn**: Our go-to for model metrics and data preprocessing.
+- **Matplotlib**: For all our visualization needs.
+- **NumPy and Pandas**: For handling data structures and numerical operations.
+- **spaCy**: The NLP powerhouse behind our text analysis.
 
-## Conclusion
+## Conclusion and Invitation
 
-SummarizeIt stands at the forefront of AI-driven research assistance, epitomizing the synergy between technology and science. We welcome feedback and collaborations to further refine and enhance this tool for the global research community.
+SummarizeIt represents a leap forward in combining AI with medical research, streamlining the review of literature. We're excited to invite the community to engage with us—whether it's feedback, questions, or collaborative efforts.
 
 ---
-
-All notebooks and detailed documentation are available in our [GitHub repository](https://github.com/vishalrk1/SkimLit/tree/main/Notebooks).
